@@ -14,9 +14,11 @@ describe('Clase Subscriptor', () => {
   });
   it('Debería de poderse ver el id del subscriptor', () => {
     expect(sub1.getId()).to.be.eq(0);
+    expect(sub2.getId()).to.be.eq(1);
   });
   it('Debería de poderse ver el nombre del subscriptor', () => {
     expect(sub1.getName()).to.be.eq('Antonio');
+    expect(sub2.getName()).to.be.eq('Samuel');
   });
   it('Debería de poderse suscribirse', () => {
     expect(sub1.subscribe).to.be.a('function');
@@ -28,31 +30,3 @@ describe('Clase Subscriptor', () => {
     expect(sub1.notify).to.be.a('function');
   });
 });
-
-
-// console.log('Primer subscriptor');
-// revista1.subscribe(firstButtonObserver);
-
-// console.log('Segundo subscriptor');
-// revista1.subscribe(secondButtonObserver);
-
-// try {
-//   revista1.subscribe(secondButtonObserver);
-// } catch (error) {
-//   console.log('Ya estaba suscrito');
-// }
-
-// console.log('revista1 left click');
-// revista1.onLeftClick();
-
-// console.log('firstButtonObserver unsubscription');
-// revista1.unsubscribe(firstButtonObserver);
-
-// console.log('revista1 right click');
-// revista1.onRightClick();
-// console.log('revista1 center click');
-// revista1.onCenterClick();
-
-// console.log('Nueva revista!');
-// novedad.subscribe(firstButtonObserver);
-// novedad.nuevaRevista();
