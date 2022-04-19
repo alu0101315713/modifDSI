@@ -27,4 +27,7 @@ describe('Clase Revista', () => {
   it('Nueva revista', () => {
     expect(novedad.nuevaRevista).to.be.a('function');
   });
+  it('Debería de poderse ver si una revista es nueva', () => {
+    expect(novedad.getName()).to.be.eq('novedad');
+  });
 });
