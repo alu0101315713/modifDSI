@@ -18,6 +18,7 @@ export abstract class CreatorClass {
     this.beforeMap();
     this.beforeReduce();
     this.afterReduce();
+    return this.results;
   }
 
   /**
@@ -33,7 +34,7 @@ export abstract class CreatorClass {
   /**
    * Reduce method for arrays
    */
-  // protected abstract reduce(callback: (accumulator: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue?: any): any;
+  protected abstract reduce(callback: (accumulator: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue?: any): any;
   /**
    * Before map method for arrays
    */
