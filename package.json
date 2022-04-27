@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/modi20_04.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/modi27_04/app.js\"",
     "doc": "typedoc; touch ./docs/.nojekyll",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
@@ -38,6 +38,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@eslint/eslintrc": "^1.2.1"
+    "@eslint/eslintrc": "^1.2.1",
+    "node": "^17.7.2"
   }
 }
