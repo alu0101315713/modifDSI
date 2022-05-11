@@ -1,14 +1,9 @@
-// import * as net from 'net';
+// import {connect} from 'net';
+// import {MessageEventEmitterClient} from './eventEmitterClient';
 
-// const client = net.connect({port: 60300});
+// const client = new MessageEventEmitterClient(connect({port: 60300}));
 
-// let data = '';
-// client.on('data', (chunk) => {
-//   data += chunk;
-// });
-
-// client.on('end', () => {
-//   const message = JSON.parse(data);
+// client.on('message', (message) => {
 //   if (message.type === 'watch') {
 //     console.log(`Connection established: watching file ${message.file}`);
 //   } else if (message.type === 'change') {
