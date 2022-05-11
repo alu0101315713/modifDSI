@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/modi11_05/ale.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/modi11_05/aaa.js\"",
     "doc": "typedoc; touch ./docs/.nojekyll",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
