@@ -2,11 +2,17 @@ import * as express from 'express';
 import * as chalk from 'chalk';
 import {execmdSpawn} from './commands';
 import {spawn} from 'child_process';
-
+/**
+ * Clase servidor que ejecuta comandos
+ * @class Server
+ */
 export class Server {
   private app = express();
   private child_: any;
   constructor() {}
+  /**
+   * Inicia el servidor
+   */
   public start() {
     this.app.get('/', (_, res) => {
       res.send('<h1>My application</h1>');
@@ -35,7 +41,6 @@ export class Server {
         }
         let result: string = "";
         let error: string = "";
-        console.log(error);
         this.child_.stdout.on('data', (newData: string) => {
           result += newData;
         });
@@ -43,7 +48,7 @@ export class Server {
           error += newData;
         });
         this.child_.on('error', (newData: string) => {
-          error += newData;
+          error = newData;
         });
         this.child_.on('close', (childCode: number, childSignal: any) => {
           if (childCode < 0) {
@@ -56,7 +61,7 @@ export class Server {
             return res.send({
               "code": childCode,
               "signal": childSignal,
-              "error": `Command ${req.query.cmd} ${req.query.args} exited with code ${childCode}`,
+              "error": error,
             });
           } else {
             return res.send({
